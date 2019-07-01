@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249169-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249169-1');
+</script>
+
+	<title>Term Statistical Tool Tutorial</title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="./css/style_tutorial.css">
+</head>
+
+<body>
+	<div>
+		<h2>詞彙統計工具使用教學示範 - 搜尋中醫詞彙</h2>
+	</div>
+
+	<div>
+		<h3>1. 載入文件集</h3>
+		<h4>1-1. 登入</h4>
+		<p>先在「文本」區塊中，按下「方法二：從DocuSky下載文件集」區塊中的「顯示DocuSky列表：」按鈕開啟DocuSky Widget。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_01_001.jpg">
+		<p>尚未登入DocuSky的情況下，DocuSky Widget會要求使用者輸入帳號與密碼。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_01_002.jpg">
+		<p>成功登入後，會顯示使用者帳戶下現有的文件集列表。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_01_003.jpg">
+		<h4>1-2. 建立文件集</h4>
+		<p>在文件集列表中，選擇要載入的文件集，按下項目右側的「載入」按鈕。<br>在此以載入「DrugsDB」資料庫下的「佛經」文件集為例。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_02_001.jpg">
+		<p>此時DocuSky Widget會顯示等待載入文件的提示圖示。<br>載入完成後，會在「文件集列表」區塊中看到新加入的文件集。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_02_002.jpg">
+		<p>如果要刪除已建立的文件集，可以按下「文件集列表」中該項目右側的刪除("X")按鈕。</p>
+		<img src="./img/tutorial_0803/tutorial0803_01_02_003.jpg">
+	</div>
+	
+	<div>
+		<h3>2. 載入分類詞彙庫</h3>
+		<h4>2-1. 建立分類詞彙檔案</h4>
+		<p>本網站需要從使用者本機端的檔案建立分類詞彙庫。<br>在作為詞彙集的檔案當中，請用分行分隔每個詞彙。（請參考下面的範例）<br>請以UTF-8編碼格式的CSV檔（.csv）或純文字檔（.txt）儲存。</p>
+		<div class="fileexample termlistexample">
+			<div class="fileexample-title termlistexample-title">01.DrugName_藥名.csv</div>
+				𧸐渠<span class="lightreturn">↵</span><br>
+				䵃麥<span class="lightreturn">↵</span><br>
+				龜<span class="lightreturn">↵</span><br>
+				龍華<span class="lightreturn">↵</span><br>
+				龍腦香<span class="lightreturn">↵</span><br>
+				...
+		</div>
+		<h4>2-2. 載入分類詞彙集</h4>
+		<p>點選「從本機上傳檔案」中的「瀏覽 / Choose Files」按鍵，會開啟本機端檔案的選擇畫面。<br>選擇詞彙集檔案後，按下「新增」鍵即可新增詞彙集。<br>可以一次選擇多個檔案建立多個詞彙集。每個詞彙集會以檔案的檔名命名。</p>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_000.jpg">
+		<p>此處以載入本機端的18個分類詞彙表為例。按下「瀏覽 / Choose Files」按鍵可以顯示使用者本機端的檔案夾。</p>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_001.jpg">
+		<p>按下「瀏覽 / Choose Files」按鍵後，可以瀏覽本機端的資料夾。在存放詞彙檔案的資料夾下選取所有的詞彙表檔案。</p>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_002.jpg">
+		<p>選取完檔案後，按下「新增」鍵，等待畫面消失後可以在下方的「分類詞彙列表」中看到新增的詞彙集。詞彙集的名稱會以詞彙檔的檔名命名。</p>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_003.jpg"><br>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_004.jpg">
+		<p>如果要刪除已建立的詞彙集，可以按下「分類詞彙列表」中該項目右側的刪除("X")按鈕。</p>
+		<img src="./img/tutorial_0803/tutorial0803_02_02_005.jpg">
+	</div>
+	
+	<div>
+		<h3>3. 進行分析</h3>
+		<h4>3-1. 選擇文件集進行分析</h4>
+		<p>「分析」區塊在使用者載入文件集與建立分類詞彙後，就會出現文件集列表讓使用者選擇要分析的文件集（可多選）。<br>選擇文件集後，按下「開始分析」執行分析程式。</p>
+		<img src="./img/tutorial_0803/tutorial0803_03_01_001.jpg">
+		<p>此處我們選擇了已經建立的兩個文件集「佛經」和「六朝道教經典」。按下「開始分析」就會顯示運算提示畫面。</p>
+		<img src="./img/tutorial_0803/tutorial0803_03_01_002.jpg">
+		<p>提示畫面中會顯示經過的時間和目前完成分析的文件數。</p>
+		<img src="./img/tutorial_0803/tutorial0803_03_01_003.jpg">
+		<h4>3-2. 輸出分析結果</h4>
+		<p>分析結束後下方會顯示結束訊息，並且提供兩種CVS檔儲存格式供使用者輸出儲存。</p>
+		<img src="./img/tutorial_0803/tutorial0803_03_02_001.jpg">
+	</div>
+</body>
+
+</html>

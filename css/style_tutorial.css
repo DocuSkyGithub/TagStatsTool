@@ -1,0 +1,41 @@
+img {
+    border: 1px solid #585858;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.fileexample{
+	position: relative;
+	border: 2px solid grey;
+	padding: 12px;
+	margin: 20px 0 0 8px;
+	color: white;
+	background-color: #18160A;
+	font-size: 16px;
+}
+
+.fileexample-title{
+	position: absolute;
+	top: -12px;
+	left: 12px;
+	background-color: #0B5A08;
+	color: white;
+	font-size: 16px;
+}
+
+.termlistexample{
+	width: 220px;
+}
+
+.resultexample{
+	width: 250px;
+}
+
+.resultexample.resultexample-file{
+	width: 650px;
+	font-size: 14px;
+}
+
+.lightreturn{
+	color: yellow;
+}

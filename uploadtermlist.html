@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249169-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249169-1');
+</script>
+
+	<title>DocuSky Term List Upload Page</title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="./css/reset.css">
+	<link type="text/css" rel="stylesheet" href="./css/jquery-ui/jquery-ui.css">
+	<link type="text/css" rel="stylesheet" href="./css/style_listupload.css">
+
+</head>
+
+<body> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="./js/spin.min.js"></script>
+	<script src="http://140.112.30.226/docusky/js.ui/docusky.ui.manageDataFileListSimpleUI.js"></script>
+	<script type="text/javascript" src="./js/general.js"></script>
+	<script type="text/javascript" src="./js/multiplefilereader.js"></script>
+	<script type="text/javascript" src="./js/docuskyasyncwrap.js"></script>
+	<script type="text/javascript" src="./js/listupload/control.js"></script>
+	
+	<h3>Upload Term List<span class="uploadcsvsubtitle">(for DocuSky TermStat Tool)</span></h3>
+	<a target="_blank" href="./tutorial_example0818.html">使用教學</a>
+	<table>
+		<tr><td class="uploadprocess-content">
+			<h4>
+				步驟一：登入DocuSky
+				<button type="button" class="button_normal" id="dsfilemanager">登入並檢視DocuSky檔案</button>
+			</h4>
+		</td></tr>
+		<tr><td class="uploadprocess-content">
+			<h4>步驟二：選擇CSV檔案(各詞彙請以換行(newline)分隔)</h4>
+			<div class="contentframe">
+				可以選擇多個檔案。每個檔案會形成一個分類詞彙表。<br>
+				在使用統計工具時，可以將同個詞彙庫中所有的詞彙表一次載入。<br><br>
+				詞彙庫名稱：
+				<input type="text" id="csvlistname">
+				<br>
+				選擇要上傳的CSV檔：
+				<input type="file" autocomplete="off" multiple="multiple" id="addfile"><br>
+			</div>
+		</td></tr>
+		<tr><td class="uploadprocess-content">
+			<h4>
+				步驟三：點此上傳檔案
+				<button type="button" class="button_primary" id="uploadfile">上傳CVS檔</button>
+			</h4>
+		</td></tr>
+	</table>
+	<div class="statusframe" id="statusandlist">
+		<div class="detailframe" id="userstatus">
+		</div>
+		<div class="detailframe" id="usertermlist">
+		</div>
+	</div>
+	
+	<div class="dtlu-overlay" id="dtluoverlay_loading">
+	</div>
+</body>
+</html>

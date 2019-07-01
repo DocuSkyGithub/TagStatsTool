@@ -1,0 +1,122 @@
+body{
+	padding: 1rem;
+}
+
+h3{
+	font-size: 24px;
+	font-weight: bold;
+	margin: 8px 0;
+}
+
+h4{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+td.uploadprocess-content{
+	padding: 8px;
+}
+
+.uploadcsvsubtitle{
+	font-size: 16px;
+	margin: 0 0 0 12px;
+}
+
+.contentframe{
+	width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 4px;
+	margin: 4px 8px;
+}
+
+.dtlu-overlay{
+	display: block;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	background-color: grey;
+}
+
+.button_normal {
+	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background-color:#007dc1;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:2px 6px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.button_normal:hover {
+	background-color:#0061a7;
+}
+.button_normal:active {
+	position:relative;
+	top:1px;
+}
+
+.button_normal.large{
+	font-size: 20px;
+}
+
+.button_primary {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fcde83;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fcde83;
+	box-shadow:inset 0px 1px 0px 0px #fcde83;
+	background-color:#fa8005;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #4b2602;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding: 2px 6px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #635c03;
+}
+.button_primary:hover {
+	background-color:#c86604;
+}
+.button_primary:active {
+	position:relative;
+	top:1px;
+}
+
+.button_disabled{
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #B0B0B0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #B0B0B0;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding: 2px 6px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #636363;
+	cursor: default;
+}

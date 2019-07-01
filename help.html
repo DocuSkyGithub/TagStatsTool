@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249169-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249169-1');
+</script>
+
+	<title>Term Statistical Tool Tutorial</title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="./css/style_help.css">
+</head>
+
+<body>
+	<div>
+		<h2>詞彙統計工具使用指南</h2>
+	</div>
+	<div>
+		<h3>歡迎使用詞彙統計工具！</h3>
+		<p>
+			本系統讓使用者能在網站中載入文本與詞彙表，並進行相關的統計分析。
+		</p>
+	</div>
+	<div>
+		<h3>使用流程概述</h3>
+		<p>
+			<ol>
+				<li>載入文本</li>
+				<li>載入分類詞彙表</li>
+				<li>分析並輸出結果</li>
+			</ol>
+		</p>
+	</div>
+	<div>
+		<h3>載入文本</h3>
+		<p>「文件」區塊提供兩種方式讓使用者載入欲分析之文件，並觀看目前載入的文件列表：</p>
+		<h4>（１）從本機端檔案建立文件集</h4>
+		<img src="./img/newcorpus_method1.jpg" height="85px" width="441px">
+		<p>點選「從本機上傳檔案」中的「瀏覽 / Choose Files」按鍵，會開啟本機端檔案的選擇畫面。<br>幫文件集命名後，按下「新增」鍵即可新增分析文件集。<br>若一次選擇多個檔案，則會全部整合進同一個文件集中。</p>
+		<h4>（２）從DocuSky加入文件集</h4>
+		<img src="./img/newcorpus_method2_1.jpg" height="58px" width="437px">
+		<p>在「文本設定」對話框中點選「顯示Docusky列表」按鍵，即會顯示DocuSky的登入畫面。<br>登入後會顯示個人帳戶中的文件集，點選指定文件集的「載入」按鈕即可從DocuSky下載文本並加入現有文件集列表。</p>
+		<img src="./img/newcorpus_method2_2.jpg">
+		<h4>（３）文件集列表</h4>
+		<img src="./img/newcorpus_list.jpg" height="458px" width="436px">
+		<p>「文件」區塊的下方會顯示以載入的文件集列表（上圖紅框處）。<br>欲刪除建立的文件集，請點選該文件集右方的「X」刪除按鈕（上圖綠框處）。</p>
+	</div>
+		<div>
+		<h3>載入分類詞彙集</h3>
+		<p>「詞彙」區塊讓使用者能從本機端載入詞彙集，並觀看目前載入的文件列表：</p>
+		<h4>（１）詞彙集的格式</h4>
+		<p>在作為詞彙集的檔案當中，請用分行分隔每個詞彙。（請參考下面的範例）<br>請以UTF-8編碼格式的CSV檔（.csv）或純文字檔（.txt）儲存。</p>
+		<div class="fileexample termlistexample">
+			<div class="fileexample-title termlistexample-title">成語.csv</div>
+				一箭雙鵰<span class="lightreturn">↵</span><br>
+				一葉知秋<span class="lightreturn">↵</span><br>
+				一舉兩得<span class="lightreturn">↵</span><br>
+				一諾千金<span class="lightreturn">↵</span><br>
+				一鼓作氣<span class="lightreturn">↵</span><br>
+				一塵不染<span class="lightreturn">↵</span><br>
+				...
+		</div>
+		<h4>（２）從本機端檔案建立分類詞彙表</h4>
+		<p>點選「從本機上傳檔案」中的「瀏覽 / Choose Files」按鍵，會開啟本機端檔案的選擇畫面。<br>選擇詞彙表案後，按下「新增」鍵即可新增詞彙表。<br>您可以一次選擇多個檔案建立多個詞彙表。每個詞彙表會以檔案的檔名命名。</p>
+		<img src="./img/newtermlist_add.jpg" height="79px" width="416px">
+		<h4>（３）從DocuSky加入詞彙表</h4>
+		<p>先點選「從DocuSKy下載CVS檔」中的「檢視DocuSky檔案」登入並取得目前DocuSky的檔案資料。再點選「檢視DocuSky上的詞彙庫」就會顯示目前儲存在DocuSky的詞彙庫列表。<br>關於如何建立詞彙庫，請參考<a target="_blank" href="./uploadtermlist.html">詞彙庫的上傳網站</a></p>
+		<img src="./img/newtermlist_add2_01.jpg" height="400px" width="513px">
+		<p>顯示詞彙庫列表後，可以點選列表中項目右方的「新增」按鈕將詞彙庫中的所有詞彙表新增到詞彙表列表中。</p>
+		<h4>（４）分類詞彙表列表</h4>
+		<img src="./img/newtermlist_list.jpg" height="433px" width="480px">
+		<p>「文件」區塊的下方會顯示建立的分類詞彙列表（上圖紅框處）。<br>欲刪除建立的分類詞彙，請點選該分類詞彙右方的「X」刪除按鈕（上圖綠框處）。</p>
+	</div>
+	<div>
+		<h3>進行分析</h3>
+		<p>「分析」區塊在使用者載入文件集與建立分類詞彙後，就會出現文件集列表讓使用者選擇要分析的文件集（可多選）。<br>選擇文件集後，按下「開始分析」執行分析程式。</p>
+		<img src="./img/analyze_choosecorpus.jpg" height="375px" width="524px">
+		<p>分析結束後下方會顯示結束訊息，並且提供兩種CVS檔儲存格式供使用者輸出儲存。</p>
+		<img src="./img/analyze_result.jpg" height="433px" width="515px">
+		<p>輸出格式有以下兩種：</p>
+		<h4>（１）各分類詞彙的詞彙統計數值</h4>
+		<div class="fileexample resultexample">
+			<div class="fileexample-title resultexample-title">Result_依詞彙分類.csv</div>
+			"category","word", "tf", "df"<span class="lightreturn">↵</span><br>
+			"成語","一石二鳥","145","120"<span class="lightreturn">↵</span><br>
+			"成語","一舉兩得","132","91"<span class="lightreturn">↵</span><br>
+			"地名","台北","162","114"<span class="lightreturn">↵</span><br>
+			"地名","台中","158","102"<span class="lightreturn">↵</span><br>
+			...
+		</div>
+		<h4>（２）個別檔案中出現的分類詞彙統計</h4>
+		<div class="fileexample resultexample resultexample-file">
+			<div class="fileexample-title resultexample-title">Result_依檔案分類.csv</div>
+			"category","file","title","source","order","termscount","totaloccurence","termlist","detail"<span class="lightreturn">↵</span><br>
+			"成語","news_001_A00001.txt","當日新聞摘要_0703","天天新聞網","1","3","10","一舉兩得,一石二鳥,一椿美事","一舉兩得(5),一石二鳥(3),一椿美事(2)"<span class="lightreturn">↵</span><br>
+			"成語","news_001_A00002.txt","當日新聞摘要_0704","天天新聞網","2","2","4","勤學不輟,賓至如歸","勤學不輟(2),賓至如歸(2)"<span class="lightreturn">↵</span><br>
+			...<br>
+			...<br>
+			"地名","news_001_A00001.txt","當日新聞摘要_0703","天天新聞網","1","3","15","台北,台中,台東","台北(6),台中(5),台東(4)"<span class="lightreturn">↵</span><br>
+			"地名","news_001_A00002.txt","當日新聞摘要_0704","天天新聞網","2","5","18","台北,台南,台中,新竹,屏東","台北(6),台南(4),台中(4),新竹(3),屏東(1)"<span class="lightreturn">↵</span><br>
+			...<br>
+			...
+		</div>
+	</div>
+</body>
+
+</html>

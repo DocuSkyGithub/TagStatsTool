@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109249169-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109249169-1');
+</script>
+
+	<title>Tag/Term Statistics Tool Test Page</title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="./css/reset.css">
+	<link type="text/css" rel="stylesheet" href="./css/jquery-ui/jquery-ui.css">
+	<link type="text/css" rel="stylesheet" href="./css/jqcloud.css">
+	<link type="text/css" rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body> 
+	<script type="text/javascript" src="./js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="./js/spin.min.js"></script>
+	<script type="text/javascript" src="./js/canvas-toBlob.js"></script>
+	<script type="text/javascript" src="./js/FileSaver.js"></script>
+	<script type="text/javascript" src="./js/jqcloud.js"></script>
+	<script type="text/javascript" src="./js/html2canvas_0_41.js"></script>
+	<!--script src="../../js.ui/docusky.ui.getDbCorpusDocumentsSimpleUI.js"></script>
+	<script src="../../js.ui/docusky.ui.manageDataFileListSimpleUI.js"></script-->
+	<script src="http://docusky.org.tw/DocuSky/js.ui/docusky.ui.getDbCorpusDocumentsSimpleUI.js"></script>
+    <script src="http://docusky.org.tw/DocuSky/js.ui/docusky.ui.manageDataFileListSimpleUI.js"></script>	
+	<script type="text/javascript" src="./js/general.js"></script>
+	<script type="text/javascript" src="./js/stopwatch.js"></script>
+	<script type="text/javascript" src="./js/multiplefilereader.js"></script>
+	<script type="text/javascript" src="./js/searchgram.js"></script>
+	<script type="text/javascript" src="./js/docuskyasyncwrap.js"></script>
+	<script type="text/javascript" src="./js/termstat.js"></script>
+	<script type="text/javascript" src="./js/control.js"></script>
+	<div class = "row">
+	<div class="top-bar">
+		<div class="top-bar-left">
+            <h1>DocuSky TermStats Tool</h1>
+        </div>
+		<div class="top-bar-right">
+			<!--
+			<a class="nav-button" href="./help.html" target="_blank">Manual</a>
+			<a class="nav-button" href="./tutorial_example0818.html" target="_blank">Example</a>
+			-->
+			<a class="nav-button" href="../../index.html" target="_blank">DocuSky</a>
+		</div>
+	</div>
+	</div>
+	<div class="row1">
+		<div class="container-sidebar">
+
+			<div class="sidebar-flag selected" value="mainscrn-welcome">START</div>
+			<div class="sidebar-flag" value="mainscrn-corpus">CORPUS</div>
+			<div class="sidebar-flag" value="mainscrn-terms">TERMLIST</div>
+			<div class="sidebar-flag" value="mainscrn-analysis">ANALYSIS</div>
+			<div class="sidebar-flag" value="mainscrn-result">RESULT</div>
+			<div class="sidebar-foot"><div class="sidebar-foot-copyright"></div></div>
+
+		</div>
+	
+		<div class="container-main">
+			<div class="main-screen current" id="mainscrn-welcome">
+				<div class="sub-screen">
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<div class="termstat-section introduction">
+									<h5 style="color: #212121;font-size:18.75px; font-weight:600;">Welcome to DocuSky TermStat Tool</h5>
+									<hr >
+									<div class="sec-sub">
+										This tool helps you to calculate term statistics from documents and categorized term lists.<br/>
+										If you are new to the tool, please click<button type="button" class="btn btn-normal flat">How to use</button>.<br/>
+										This tool is also supported by DocuSKy, if you want to know how to do, please click<button type="button" class="btn btn-normal flat">How to add from DocuSky</button>.<br/>
+										To know more about Docusky, click "DocuSky" link on the right top corner, Thank you!
+									</div>
+								</div>
+								<div class="termstat-section">
+									<h5 style="color: #212121;font-size:18.75px; font-weight:600; padding-bottom: 10px">Tool Usage Flow Chart</h5>
+									<hr style="padding-bottom: 20px">
+									<div class="sec-sub">
+										<table class="toolflowchart">
+											<tr>
+												<td class="flowchart-fixedcolumn">
+													<div class="flowchart-title" value="mainscrn-corpus" style="cursor: pointer;">CORPUS</div>
+												</td>
+												<td class="flowchart-arrow" rowspan="2">
+													<div>⇨</div>
+												</td>
+												<td class="flowchart-fixedcolumn">
+													<div class="flowchart-title" value = "mainscrn-terms" style="cursor: pointer;">TERMLIST</div>
+												</td>
+												<td class="flowchart-arrow" rowspan="2">
+													<div>⇨</div>
+												</td>
+												<td class="flowchart-fixedcolumn">
+													<div class="flowchart-title" value = "mainscrn-analysis" style="cursor: pointer;">ANALYSIS</div>
+												</td>
+												<td class="flowchart-arrow" rowspan="2">
+													<div>⇨</div>
+												</td>
+												<td class="flowchart-fixedcolumn">
+													<div class="flowchart-title" value="mainscrn-result" style="cursor: pointer;">RESULT</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="flowchart-detail">
+														<div class="flowchart-detail-title">Add New Corpus</div>
+														<ol style="list-style: decimal;margin-left: 1.5rem">
+															<li style="margin-top: 10px">From Local</li>
+															<li>From DocuSky</li>
+														</ol>
+													</div>
+												</td>
+												<td>
+													<div class="flowchart-detail">
+														<div class="flowchart-detail-title">Add New Term List</div>
+														<ol style="list-style: decimal;margin-left: 1.5rem">
+															<li style="margin-top: 10px">From Local</li>
+															<li>From DocuSky</li>
+															<li>If terms are tagged in XML tags, and no extra term lists required, go to the next step.</li>
+														</ol>
+													</div>
+												</td>
+												<td>
+													<div class="flowchart-detail">
+														<div class="flowchart-detail-title">Confirm your Corpus, Term Lists</div>
+														<ol style="list-style: decimal;margin-left: 1.5rem">
+															<li style="margin-top: 10px">Extra term lists</li>
+															<li>XML tags</li>
+														</ol>
+													</div>
+												</td>
+												<td>
+													<div class="flowchart-detail">
+														<div class="flowchart-detail-title">Result and Output</div>
+														<ol style="list-style: decimal;margin-left: 1.5rem">
+															<li style="margin-top: 10px">From Local</li>
+															<li>Output by categorized terms</li>
+															<li>Output by documents</li>
+															<li>Word Cloud</li>
+														</ol>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-screen" id="mainscrn-corpus">
+				<div class="sub-screen half left">
+					<div class="sscr-title">Add New Corpus</div>
+
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<!--
+								<div class="termstat-section introduction">
+									<div class="sec-sub">
+										Add corpus you want to analyze here.
+									</div>
+									<div class="sec-sub">
+										You can load several text files from your local disk to generate a new corpus, or login DocuSky to load the entire corpus you have saved in the account.
+									</div>
+								</div>
+								-->
+								<div class="termstat-section">
+									<div class="sec-sub">
+										<b>You have two methods to add corpus you want to analyze:</b>
+									</div>
+									<div class="sec-title-frame">Method 1: Add from local</div>
+									<div class="box">
+									<div class="sec-sub">
+										<form class="inlineformgroup">
+											<div class="inlineinput">
+												<div class="stick aa">Corpus Name</div>
+												<div class="stick ab"><input type="text" id="addcorpus-clientfile-corpusname"></div>
+											</div>
+										</form>
+									</div>
+									<div class="sec-sub">
+										<form class="inlineformgroup">
+											<div class="inlineinput">
+												<div class="stick aa">Choose File</div>
+												<div class="inlineinput filegroup">
+													<span class="inputfile-info">No file Chosen</span>
+													<label for="addcorpus-clientfile-textfiles" class="inputfile">Select</label>
+													<input type="file" autocomplete="off" multiple="multiple" id="addcorpus-clientfile-textfiles">
+												</div>
+											</div><!-- (REMOVE INLINE BLANK)-->
+										</form>
+									</div>
+									<div class="sec-sub btnholder lefttoright">
+										<button type="button" class="btn btn-passed" id="addcorpus-clientfile-submit">Add</button>
+									</div>
+									</div>
+									<div class="sec-sub">
+										<div class="sec-title-frame">Method 2: Add from DocuSky</div>
+									</div>
+									<div class="box" style="font-weight: bold;">
+										Log in DocuSky DB, then select the corpus you want to add:
+										<div class="sec-sub btnholder lefttoright">
+											<button type="button" class="btn btn-passed" id="addcorpus-docusky-openwidget">DocuSky Corpus Widget</button>
+										</div>
+									</div>
+									<div class="sec-sub btnholder righttoleft">
+										<button class="btn large btn-passed" id="corpus-next-termlist">Next</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- (REMOVE INLINE BLANK)
+				--><div class="sub-screen half right">
+					<div class="sscr-title contrast">Corpus List</div>
+					<div class="sscr-content2">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent2">
+								<table class="termlisttable" id="savedcorpuslist">
+									<tr class="termstat-tr">
+										<th class="termstat-th">No saved corpus exist.</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-screen" id="mainscrn-terms">
+				<div class="sub-screen half left">
+					<div class="sscr-title">Add New Term Lists</div>
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<div class="termstat-section">								
+									<div class="sec-sub">
+										<p style="margin-bottom: 0">You have two methods to add term list you want to calculate statistical result in previous loaded corpora:</p>
+									</div>
+										<div class="sec-title-frame">Method 1: Add from local</div>
+										<div class="box" style="margin-bottom: 0">
+										<p style="margin-bottom: 0">You can create a new term list file at local. Please separate each term with a newline (or comma) and save as Unicode UTF-8 text file (.txt).</p>
+										<form class="inlineformgroup">
+											<div class="inlineinput">
+												<div class="stick aa">Choose Files</div>
+											<!--
+											--><div class="inlineinput filegroup">
+												<span class="inputfile-info">No file Chosen</span>
+												<label for="addtermlist-clientfile-textfiles" class="inputfile">Select</label>
+												<input type="file" autocomplete="off" multiple="multiple" id="addtermlist-clientfile-textfiles">
+											</div>
+											</div>
+										</form>
+									<div class="sec-sub btnholder lefttoright">
+										<button type="button" class="btn btn-passed" id="addtermlist-clientfile-submit">Add</button>
+									</div>
+									</div>
+										<div class="sec-title-frame">Method 2: Download from DocuSky</div>
+									<div class="box">
+										<a target="_blank" href="./uploadtermlist.html">Upload Termlist to DocuSky</a><br/>
+										<form class="inlineformgroup">
+											<div class="inlineinput">1. Log in DocuSky and update file list: </div><!-- (REMOVE INLINE BLANK)
+											--><div class="inlineinput"><button type="button" class="btn btn-normal" id="addtermlist-docusky-openwidget">DocuSky File Widget</button></div>
+										</form>
+									<div class="sec-sub">
+										<form class="inlineformgroup">
+											<div class="inlineinput">2. View the term list groups saved on DocuSky</div><!-- (REMOVE INLINE BLANK)
+											--><div class="inlineinput"><button type="button" class="btn btn-normal" id="addtermlist-docusky-getlistinfo" disabled="disabled">View Term List Groups</button></div>
+										</form>
+										<div style="margin-bottom: 8px">
+											<table class="termlisttable" id="addtermlist-docusky-tltable">
+												<tr class="termstat-tr">
+													<th class="termstat-th">No saved term list group in your DocuSky account.</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+									</div>
+									<div class="sec-title-frame">Terms in XML tags</div>
+									<div class="box">
+										<p>If you use XML format documents with tagged terms, please go to the next step.</p>
+									</div>
+									
+									<div class="sec-sub btnholder righttoleft">
+										<button class="btn large btn-passed" id="termlist-next-analysis">Next</button>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div><!-- (REMOVE INLINE BLANK)
+				--><div class="sub-screen half right">
+					<div class="sscr-title contrast">Current Term Lists</div>
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<table class="termlisttable" id="savedtermlist">
+									<tr class="termstat-tr">
+										<th class="termstat-th">No saved term list exist.</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-screen" id="mainscrn-analysis">
+				<div class="sub-screen">
+					<div class="sscr-title">
+						Analysis Settings
+					</div>
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<div class="termstat-section introduction">
+									<div class="sec-sub">
+										Please confirm the corpora and term lists you selected. Once confirmed, click "Run" to start the analysis.<br/>If you want to analyze XML tag contents in your documents, click on "Corpus with XML Tags".
+									</div>
+								</div>
+								<div class="tabgroup" id="termstat-selectsearchtype">
+									<span class="tabgroup-navtab half selected" id="termstat-selectsearchtype-fulltext">Corpus and term lists</span><!--
+									--><span class="tabgroup-navtab half" id="termstat-selectsearchtype-xmltag">Corpus with XML tags</span>
+								</div>
+								<div class="tabscreen current" id="termstat-preview-searchtype-fulltext">
+									<div class="termstat-section">
+										<div class="sec-sub">
+											<div class="analysispreview-inputlist">
+												<div class="analysispreview-listwin halfwidth">
+													<div class="title">Corpus</div>
+													<div class="analysispreview-listtable">
+													<table id="analysispreview-ft-corpuslist">
+														<tr><th>No corpus exist.</th></tr>
+													</table>
+													</div>
+												</div><!--
+												--><div class="analysispreview-listwin halfwidth">
+													<div class="title">Term List</div>
+													<div class="analysispreview-listtable">
+													<table id="analysispreview-ft-termlist">
+														<tr><th>No term list exist.</th></tr>
+													</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sec-sub">
+											<div class="analysispreview-commands">
+												<button class="btn large btn-passed" id="analysis-run-fulltext" disabled="disabled">Run Analysis</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabscreen" id="termstat-preview-searchtype-xmltag">
+									<div class="termstat-section">
+										<div class="sec-sub">
+											<div class="analysispreview-inputlist">
+												<div class="analysispreview-listwin">
+													<div class="title">Corpus</div>
+													<div class="analysispreview-listtable">
+													<table id="analysispreview-xt-corpuslist">
+														<tr><th>No corpus exist.</th></tr>
+													</table>
+													</div>
+												</div>
+											</div>
+											<div class="analysispreview-tagsettings" id="analysispreview-xt-tagsettings">
+												<div class="analysispreview-listwin">
+													<div class="title">XML tag settings</div>
+													<div class="analysispreview-listtable">
+													<table id="analysispreview-xt-taglist">
+														<tr><th>No XML tag exist in current corpus.</th></tr>
+													</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sec-sub">
+											<div class="analysispreview-commands">
+												<button class="btn large btn-passed" id="analysis-run-xmltag" disabled="disabled">Run Analysis</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-screen" id="mainscrn-result">
+				<div class="sub-screen">
+					<div class="sscr-title">Output Result</div>
+					<div class="sscr-content">
+						<div class="termstat-contentwindow">
+							<div class="termstat-screencontent">
+								<div class="termstat-section">
+									<div class="sec-sub termstat-resultdetail" id="termstat-result-info">
+										<div class="sec-title-frame">Details</div>
+										<br/>Have not run any analysis yet.
+									</div>
+								</div>
+								<div class="termstat-section">
+									<div class="sec-sub">
+										<div class="sec-title-frame">Output CSV File</div>
+										<form class="inlineformgroup">
+											<div class="inlineinput"><input type="radio" name="csvtype" value="basicfreq" disabled="disabled"/><span class="radio-label">Basic Term Frequencies</span></div>
+											<div class="inlineinput"><input type="radio" name="csvtype" value="categorizedfile" disabled="disabled"/><span class="radio-label">Categorized File Result</span></div>
+											<div class="inlineinput"><input type="radio" name="csvtype" value="categorizedterm" disabled="disabled"/><span class="radio-label">Categorized Term Result</span></div>
+										</form>
+										
+										<div class="termstat-outputfileoptions">
+											Each line of data shows term frequency and document frequency of terms found.<br/>
+											<button type="button" class="btn btn-normal" id="outputfile-basicfreq" disabled="disabled">Save as CSV</button><!--
+											--><button type="button" class="btn btn-normal" id="outputjson-basicfreq" disabled="disabled">Save as JSON</button><!--
+											--><button type="button" class="btn btn-normal" id="uploaddocusky-basicfreq" disabled="disabled">Upload to DocuSky</button>
+										</div>
+										<div class="termstat-outputfileoptions">
+											Each line of data shows categorized terms found in a document.<br/>Select metadata output to CSV file, then click "Save" to save the result.<br/>
+											Select metadata columns to output:
+											<div class="termstat-selectlistframe" id="output-files-filemetadata">
+												<table class="outputcsv-listtable">
+												</table>
+											</div>
+											<button type="button" class="btn btn-normal" id="outputfile-categorizedfile" disabled="disabled">Save as CSV</button><!--
+											--><button type="button" class="btn btn-normal" id="outputjson-categorizedfile" disabled="disabled">Save as JSON</button><!--
+											--><button type="button" class="btn btn-normal" id="uploaddocusky-categorizedfile" disabled="disabled">Upload to DocuSky</button>
+										</div>
+										<div class="termstat-outputfileoptions">
+											Each line of data shows. Please select metadata and HTML tag attribute, then click "Save" to output CSV file.<br/>
+											Select metadata columns to output:
+											<div class="termstat-selectlistframe" id="output-terms-filemetadata">
+												<table class="outputcsv-listtable">
+												</table>
+											</div>
+											Select XML tag attributes to output (WARNING: Tagged terms with the same selected attributes will be combined):
+											<div class="termstat-selectlistframe" id="output-terms-xmlattribute">
+												<table class="outputcsv-listtable">
+												</table>
+											</div>
+											<button type="button" class="btn btn-normal" id="outputfile-categorizedterm" disabled="disabled">Save as CSV</button><!--
+											--><button type="button" class="btn btn-normal" id="outputjson-categorizedterm" disabled="disabled">Save as JSON</button><!--
+											--><button type="button" class="btn btn-normal" id="uploaddocusky-categorizedterm" disabled="disabled">Upload to DocuSky</button>
+										</div>
+										
+										<div class="termstat-outputfileoptions current">
+											Have not run any analysis yet.
+										</div>
+									</div>
+								</div>
+								<div class="termstat-section">
+									<div class="sec-sub">
+										<div class="sec-title-frame">Word Clouds</div>
+										<div id="termstat-wordcloud">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-nav">
+		© NTU CSIE LAB303 2017
+	</div>
+
+	<div class="dialog-loading" id="dialog-loading" title="Please Wait...">
+		<div class="processbar" id="processbar">
+			<div class="processbar-ratio" id="processbar-ratio"></div>
+			<div class="loadingmessage" id="loadingmessage"></div>
+		</div>
+	</div>
+	
+	<div class="dialog-termlist" id="dialog-termlist" title="TermList">
+	</div>
+	
+	<div class="xmltextextract" id="docuskytmpxml"></div>
+	
+</body>
+</html>
